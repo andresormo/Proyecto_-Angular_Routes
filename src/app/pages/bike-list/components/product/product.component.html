@@ -1,0 +1,11 @@
+<div
+class="product"
+*ngIf="bikes"
+>
+<img class="product__img" src="{{bikes.img}}" alt="{{bikes.model}}">
+<div class="product__info">
+  <h3 class="product__brand">{{bikes.brand}}</h3>
+  <p class="product__model">{{bikes.model}}</p>
+  <span class="product__price">Precio: {{bikes.price}}€</span>
+</div>
+</div>

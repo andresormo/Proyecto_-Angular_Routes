@@ -1,0 +1,35 @@
+.product{
+  width: 300px;
+  height: 350px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  margin: 24px;
+  border: 1px solid gray;
+  box-shadow: 1px 1px 1px gray ;
+  &__info{
+    background-color: rgb(241, 241, 241);
+    height: 42%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__brand{
+    margin: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__model{
+    padding-left: 8px;
+  }
+  &__img {
+    width: 300px;
+    height: 200px;
+ }
+ &__price{
+  display: block;
+  text-align: center;
+  margin: 0;
+  font-weight: bold;
+ }
+}
