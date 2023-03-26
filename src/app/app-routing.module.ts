@@ -17,8 +17,8 @@ const routes: Routes = [
     loadChildren: ()=> import('./pages/bike-list/bike-list.module').then(m=>m.BikeListModule)
   },
   {
-    path:'contact',
-    loadChildren: ()=> import('./pages/contact/contact.module').then(m=>m.ContactModule)
+    path:'form',
+    loadChildren: ()=> import('./pages/form/form.module').then(m=>m.FormModule)
   },
   {
     path:'**',

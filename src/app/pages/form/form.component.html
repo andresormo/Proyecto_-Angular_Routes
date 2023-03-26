@@ -1,0 +1,111 @@
+<form
+*ngIf="bikeForm"
+[formGroup]="bikeForm"
+(submit)="sendData()">
+  <div>
+    <input placeholder="nombre" formControlName="name" />
+    <p
+      *ngIf="!bikeForm.get('name')?.valid && bikeForm.get('name')?.touched"
+      class="control__error"
+    >
+      El campo es requerido
+    </p>
+  </div>
+
+  <div>
+    <input placeholder="Apellido" formControlName="subname" />
+  </div>
+
+  <div>
+    <input placeholder="nif" formControlName="nif" />
+    <p
+      *ngIf="!bikeForm.get('nif')?.valid && bikeForm.get('nif')?.touched"
+      class="control__error"
+    >
+      El campo es requerido
+    </p>
+  </div>
+
+   <div>
+    <input placeholder="email" formControlName="email" />
+    <p
+      *ngIf="!bikeForm.get('email')?.valid && bikeForm.get('email')?.touched"
+      class="control__error"
+    >
+      <span *ngIf="bikeForm.get('email')?.errors?.['required']"
+        >El campo es requerido</span
+      >
+      <span *ngIf="bikeForm.get('email')?.errors?.['email']"
+        >El campo debe ser tipo email</span
+      >
+    </p>
+  </div>
+
+  <div>
+    <input
+      type="password"
+      placeholder="contraseña"
+      formControlName="password"
+      pattern="^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+){6,}$"
+    />
+    <p
+      *ngIf="
+        !bikeForm.get('password')?.valid && bikeForm.get('password')?.touched"
+      class="control__error"
+    >
+      <span *ngIf="bikeForm.get('password')?.errors?.['required']"
+        >El campo es requerido</span
+      >
+      <span *ngIf="bikeForm.get('password')?.errors?.['pattern']"
+        >La contraseña deberá de ser de más de 6 caracteres e incluir al menos
+        un número</span
+      >
+    </p>
+  </div>
+
+  <div>
+    <p>Acepta la politica de privacidad</p>
+    <input type="checkbox" formControlName="privacity" />
+    <p
+    class="control__error"
+    *ngIf="
+    !bikeForm.get('privacity')?.valid && bikeForm.get('privacity')?.touched"
+    >
+      El campo es requerido
+    </p>
+  </div>
+
+  <div>
+    <textarea
+      placeholder="Descripcion"
+      formControlName="description"
+    ></textarea>
+  </div>
+
+  <div>
+    <input placeholder="Número de telefono" formControlName="phone" />
+    <p
+    class="control__error">
+      <span
+      class="control__error"
+      *ngIf="!bikeForm.get('phone')?.valid &&
+       bikeForm.get('phone')?.touched &&
+       !bikeForm.get('phone')?.errors?.['maxlength']">
+        El numero debe ser de 9 dígitos
+      </span>
+      <span
+       *ngIf="!bikeForm.get('phone')?.valid &&
+        bikeForm.get('phone')?.touched &&
+        bikeForm.get('phone')?.errors?.['pattern']"
+        class="control__error"
+        >Deben ser solo caracteres numéricos</span
+      >
+    </p>
+  </div>
+
+  <button
+  type="submit"
+  >
+  Enviar</button>
+  <p class="control__error" *ngIf="hasFormError">Errores en el formulario</p>
+</form>

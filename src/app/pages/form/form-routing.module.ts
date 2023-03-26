@@ -1,4 +1,4 @@
-import { ContactComponent } from './contact.component';
+import { FormComponent } from './form.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path:'',
     pathMatch:'full',
-    component: ContactComponent
+    component: FormComponent
   }
 ];
 
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ContactRoutingModule { }
+export class FormRoutingModule { }
